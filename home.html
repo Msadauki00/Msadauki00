@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MAS Square</title>
+</head>
+<body>
+  <h1>Welcome to MAS Square Site</h1>
+
+  <h2>Available Files</h2>
+
+  <!-- Free files -->
+  <div>
+    <p>🎵 Sample Song (Free)</p>
+    <a href="/files/sample.mp3" download>
+      <button>Download Free</button>
+    </a>
+  </div>
+
+  <div>
+    <p>📖 Free eBook (Free)</p>
+    <a href="/files/ebook.pdf" download>
+      <button>Download Free</button>
+    </a>
+  </div>
+
+  <!-- Paid files -->
+  <div>
+    <p>🎶 Premium Music - ₦200</p>
+    <button onclick="payWithPaystack(200, 'premium-music.mp3')">Download (₦200)</button>
+  </div>
+
+  <div>
+    <p>📱 Mobile App - ₦1000</p>
+    <button onclick="payWithPaystack(1000, 'myapp.apk')">Download (₦1000)</button>
+  </div>
+
+  <div>
+    <p>🎬 Tutorial Video - ₦300</p>
+    <button onclick="payWithPaystack(300, 'tutorial.mp4')">Download (₦300)</button>
+  </div>
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <script>
+    function payWithPaystack(amount, filename) {
+      var handler = PaystackPop.setup({
+        key: 'pk_test_xxxxxx', // replace with your Paystack public key
+        email: 'customer@example.com',
+        amount: amount * 100, // Kobo
+        currency: 'NGN',
+        callback: function(response) {
+          // After payment success, trigger download
+          window.location.href = "/download/" + filename;
+        }
+      });
+      handler.openIframe();
+    }
+  </script>
+</body>
+</html>

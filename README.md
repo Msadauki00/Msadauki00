@@ -1,16 +1,19 @@
-## Hi there 👋
+# MAS Square Website (v3)
+This is the updated version of MAS Square website with multiple free and paid files.
 
-<!--
-**Msadauki00/Msadauki00** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Features
+- Free file downloads (songs, ebooks)
+- Paid downloads (music, apps, videos)
+- Paystack payment integration with OPay support
 
-Here are some ideas to get you started:
+## Setup
+1. Replace `pk_test_xxxxxx` in `home.html` with your **Paystack Public Key**.
+2. Add your **Paystack Secret Key** in Render environment variables.
+3. Upload to GitHub and deploy on Render.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## File Prices
+- `sample.mp3` → Free
+- `ebook.pdf` → Free
+- `premium-music.mp3` → ₦100
+- `myapp.apk` → ₦500
+- `tutorial.mp4` → ₦100
